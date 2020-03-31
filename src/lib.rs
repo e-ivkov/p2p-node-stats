@@ -2,8 +2,8 @@ use chashmap::CHashMap;
 use std::{fmt, time::Duration, io::{self, prelude::*}, fs::File};
 
 pub struct Stats {
-    pings_to_peers: CHashMap<String, Vec<Duration>>,
-    transmissions_rates: CHashMap<String, Vec<Duration>>,
+    pub pings_to_peers: CHashMap<String, Vec<Duration>>,
+    pub transmissions_rates: CHashMap<String, Vec<Duration>>,
     window_size: usize,
     peer_id: String,
 }
