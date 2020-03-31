@@ -1,5 +1,5 @@
 [package]
-name = "p2p-node-stats"
+name = "p2p_node_stats"
 version = "0.1.0"
 authors = ["Egor Ivkov <e.o.ivkov@gmail.com>"]
 edition = "2018"
