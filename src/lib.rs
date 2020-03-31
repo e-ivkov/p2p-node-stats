@@ -1,6 +1,5 @@
 use chashmap::CHashMap;
-use std::fmt;
-use std::time::Duration;
+use std::{fmt, time::Duration, io::{self, prelude::*}, fs::File};
 
 pub struct Stats {
     pings_to_peers: CHashMap<String, Vec<Duration>>,
@@ -17,6 +16,12 @@ impl Stats {
             window_size,
             peer_id,
         }
+    }
+
+    pub fn save_to_file(&self, filename: &str) -> io::Result<()>{
+        let mut file = File::create(filename)?;
+        file.write_all(self.to_string().as_bytes())?;
+        Ok(())
     }
 }
 
